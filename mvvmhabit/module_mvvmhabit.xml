@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_mvvmhabit" default="compile.module.mvvmhabit">
+  <dirname property="module.mvvmhabit.basedir" file="${ant.file.module_mvvmhabit}"/>
+  
+  <property name="module.jdk.home.mvvmhabit" value="${jdk.home.android_api_28_platform}"/>
+  <property name="module.jdk.bin.mvvmhabit" value="${jdk.bin.android_api_28_platform}"/>
+  <property name="module.jdk.classpath.mvvmhabit" value="jdk.classpath.android_api_28_platform"/>
+  
+  <property name="compiler.args.mvvmhabit" value="-encoding UTF-8 -source 7 -target 7 ${compiler.args}"/>
+  
+  <property name="mvvmhabit.output.dir" value="${module.mvvmhabit.basedir}/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes"/>
+  <property name="mvvmhabit.testoutput.dir" value="${module.mvvmhabit.basedir}/build/intermediates/javac/debugUnitTest/compileDebugUnitTestJavaWithJavac/classes"/>
+  
+  <path id="mvvmhabit.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="mvvmhabit.module.production.classpath">
+    <path refid="${module.jdk.classpath.mvvmhabit}"/>
+    <path refid="library.gradle:_com.android.support:localbroadcastmanager-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.github.tbruyelle:rxpermissions-0.10.2.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-vector-drawable-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:interpolator-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-core-utils-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.squareup.retrofit2:retrofit:2.4.0@jar.classpath"/>
+    <path refid="library.gradle:_com.trello.rxlifecycle2:rxlifecycle:2.2.2@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:drawerlayout-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:coordinatorlayout-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:swiperefreshlayout-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.github.bumptech.glide:annotations:4.8.0@jar.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:livedata-1.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.databinding:adapters-3.3.2.classpath"/>
+    <path refid="library.gradle:_com.squareup.okio:okio:1.14.0@jar.classpath"/>
+    <path refid="library.gradle:_com.trello.rxlifecycle2:rxlifecycle-components-2.2.2.classpath"/>
+    <path refid="library.gradle:_com.android.support:versionedparcelable-28.0.0.classpath"/>
+    <path refid="library.gradle:_io.reactivex.rxjava2:rxandroid-2.1.0.classpath"/>
+    <path refid="library.gradle:_com.afollestad.material-dialogs:core-0.9.4.5.classpath"/>
+    <path refid="library.gradle:_android.arch.core:runtime-1.1.1.classpath"/>
+    <path refid="library.gradle:_com.trello.rxlifecycle2:rxlifecycle-android-2.2.2.classpath"/>
+    <path refid="library.gradle:_com.android.support:loader-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.databinding:baselibrary:3.3.2@jar.classpath"/>
+    <path refid="library.gradle:_me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-2.2.0.classpath"/>
+    <path refid="library.gradle:_com.squareup.retrofit2:adapter-rxjava2:2.4.0@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-v4-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.squareup.retrofit2:converter-gson:2.4.0@jar.classpath"/>
+    <path refid="library.gradle:_com.github.bumptech.glide:gifdecoder-4.8.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:viewpager-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.databinding:library-3.3.2.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-annotations:28.0.0@jar.classpath"/>
+    <path refid="library.gradle:_com.jakewharton.rxbinding2:rxbinding-2.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:runtime-1.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:customview-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.gyf.immersionbar:immersionbar-2.3.3.classpath"/>
+    <path refid="library.gradle:_com.google.code.gson:gson:2.8.5@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-core-ui-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:slidingpanelayout-28.0.0.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:viewmodel-1.1.1.classpath"/>
+    <path refid="library.gradle:_org.reactivestreams:reactive-streams:1.0.2@jar.classpath"/>
+    <path refid="library.gradle:_com.github.bumptech.glide:glide-4.8.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:collections:28.0.0@jar.classpath"/>
+    <path refid="library.gradle:_me.zhanghai.android.materialprogressbar:library-1.4.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:documentfile-28.0.0.classpath"/>
+    <path refid="library.gradle:_me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview-2.2.0.classpath"/>
+    <path refid="library.gradle:_com.afollestad.material-dialogs:commons-0.9.4.5.classpath"/>
+    <path refid="library.gradle:_com.android.support:recyclerview-v7-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:cursoradapter-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:asynclayoutinflater-28.0.0.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:extensions-1.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.core:common:1.1.1@jar.classpath"/>
+    <path refid="library.gradle:_io.reactivex.rxjava2:rxjava:2.2.3@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-media-compat-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:print-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.squareup.okhttp3:okhttp:3.10.0@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-fragment-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.github.bumptech.glide:disklrucache:4.8.0@jar.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:common:1.1.1@jar.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:livedata-core-1.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-compat-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:animated-vector-drawable-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:appcompat-v7-28.0.0.classpath"/>
+  </path>
+  
+  <path id="mvvmhabit.runtime.production.module.classpath">
+    <pathelement location="${mvvmhabit.output.dir}"/>
+    <path refid="library.gradle:_com.android.support:localbroadcastmanager-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.github.tbruyelle:rxpermissions-0.10.2.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-vector-drawable-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:interpolator-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-core-utils-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.squareup.retrofit2:retrofit:2.4.0@jar.classpath"/>
+    <path refid="library.gradle:_com.trello.rxlifecycle2:rxlifecycle:2.2.2@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:drawerlayout-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:coordinatorlayout-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:swiperefreshlayout-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.github.bumptech.glide:annotations:4.8.0@jar.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:livedata-1.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.databinding:adapters-3.3.2.classpath"/>
+    <path refid="library.gradle:_com.squareup.okio:okio:1.14.0@jar.classpath"/>
+    <path refid="library.gradle:_com.trello.rxlifecycle2:rxlifecycle-components-2.2.2.classpath"/>
+    <path refid="library.gradle:_com.android.support:versionedparcelable-28.0.0.classpath"/>
+    <path refid="library.gradle:_io.reactivex.rxjava2:rxandroid-2.1.0.classpath"/>
+    <path refid="library.gradle:_com.afollestad.material-dialogs:core-0.9.4.5.classpath"/>
+    <path refid="library.gradle:_android.arch.core:runtime-1.1.1.classpath"/>
+    <path refid="library.gradle:_com.trello.rxlifecycle2:rxlifecycle-android-2.2.2.classpath"/>
+    <path refid="library.gradle:_com.android.support:loader-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.databinding:baselibrary:3.3.2@jar.classpath"/>
+    <path refid="library.gradle:_me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-2.2.0.classpath"/>
+    <path refid="library.gradle:_com.squareup.retrofit2:adapter-rxjava2:2.4.0@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-v4-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.squareup.retrofit2:converter-gson:2.4.0@jar.classpath"/>
+    <path refid="library.gradle:_com.github.bumptech.glide:gifdecoder-4.8.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:viewpager-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.databinding:library-3.3.2.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-annotations:28.0.0@jar.classpath"/>
+    <path refid="library.gradle:_com.jakewharton.rxbinding2:rxbinding-2.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:runtime-1.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:customview-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.gyf.immersionbar:immersionbar-2.3.3.classpath"/>
+    <path refid="library.gradle:_com.google.code.gson:gson:2.8.5@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-core-ui-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:slidingpanelayout-28.0.0.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:viewmodel-1.1.1.classpath"/>
+    <path refid="library.gradle:_org.reactivestreams:reactive-streams:1.0.2@jar.classpath"/>
+    <path refid="library.gradle:_com.github.bumptech.glide:glide-4.8.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:collections:28.0.0@jar.classpath"/>
+    <path refid="library.gradle:_me.zhanghai.android.materialprogressbar:library-1.4.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:documentfile-28.0.0.classpath"/>
+    <path refid="library.gradle:_me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview-2.2.0.classpath"/>
+    <path refid="library.gradle:_com.afollestad.material-dialogs:commons-0.9.4.5.classpath"/>
+    <path refid="library.gradle:_com.android.support:recyclerview-v7-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:cursoradapter-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:asynclayoutinflater-28.0.0.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:extensions-1.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.core:common:1.1.1@jar.classpath"/>
+    <path refid="library.gradle:_io.reactivex.rxjava2:rxjava:2.2.3@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-media-compat-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:print-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.squareup.okhttp3:okhttp:3.10.0@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-fragment-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.github.bumptech.glide:disklrucache:4.8.0@jar.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:common:1.1.1@jar.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:livedata-core-1.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-compat-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:animated-vector-drawable-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:appcompat-v7-28.0.0.classpath"/>
+  </path>
+  
+  <path id="mvvmhabit.module.classpath">
+    <path refid="${module.jdk.classpath.mvvmhabit}"/>
+    <pathelement location="${mvvmhabit.output.dir}"/>
+    <path refid="library.gradle:_com.android.support:localbroadcastmanager-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.github.tbruyelle:rxpermissions-0.10.2.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-vector-drawable-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:interpolator-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-core-utils-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.squareup.retrofit2:retrofit:2.4.0@jar.classpath"/>
+    <path refid="library.gradle:_com.trello.rxlifecycle2:rxlifecycle:2.2.2@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:drawerlayout-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:coordinatorlayout-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:swiperefreshlayout-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.github.bumptech.glide:annotations:4.8.0@jar.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:livedata-1.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.databinding:adapters-3.3.2.classpath"/>
+    <path refid="library.gradle:_com.squareup.okio:okio:1.14.0@jar.classpath"/>
+    <path refid="library.gradle:_com.trello.rxlifecycle2:rxlifecycle-components-2.2.2.classpath"/>
+    <path refid="library.gradle:_com.android.support:versionedparcelable-28.0.0.classpath"/>
+    <path refid="library.gradle:_io.reactivex.rxjava2:rxandroid-2.1.0.classpath"/>
+    <path refid="library.gradle:_com.afollestad.material-dialogs:core-0.9.4.5.classpath"/>
+    <path refid="library.gradle:_android.arch.core:runtime-1.1.1.classpath"/>
+    <path refid="library.gradle:_com.trello.rxlifecycle2:rxlifecycle-android-2.2.2.classpath"/>
+    <path refid="library.gradle:_com.android.support:loader-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.databinding:baselibrary:3.3.2@jar.classpath"/>
+    <path refid="library.gradle:_me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-2.2.0.classpath"/>
+    <path refid="library.gradle:_com.squareup.retrofit2:adapter-rxjava2:2.4.0@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-v4-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.squareup.retrofit2:converter-gson:2.4.0@jar.classpath"/>
+    <path refid="library.gradle:_com.github.bumptech.glide:gifdecoder-4.8.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:viewpager-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.databinding:library-3.3.2.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-annotations:28.0.0@jar.classpath"/>
+    <path refid="library.gradle:_com.jakewharton.rxbinding2:rxbinding-2.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:runtime-1.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:customview-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.gyf.immersionbar:immersionbar-2.3.3.classpath"/>
+    <path refid="library.gradle:_com.google.code.gson:gson:2.8.5@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-core-ui-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:slidingpanelayout-28.0.0.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:viewmodel-1.1.1.classpath"/>
+    <path refid="library.gradle:_org.reactivestreams:reactive-streams:1.0.2@jar.classpath"/>
+    <path refid="library.gradle:_com.github.bumptech.glide:glide-4.8.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:collections:28.0.0@jar.classpath"/>
+    <path refid="library.gradle:_me.zhanghai.android.materialprogressbar:library-1.4.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:documentfile-28.0.0.classpath"/>
+    <path refid="library.gradle:_me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview-2.2.0.classpath"/>
+    <path refid="library.gradle:_com.afollestad.material-dialogs:commons-0.9.4.5.classpath"/>
+    <path refid="library.gradle:_com.android.support:recyclerview-v7-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:cursoradapter-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:asynclayoutinflater-28.0.0.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:extensions-1.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.core:common:1.1.1@jar.classpath"/>
+    <path refid="library.gradle:_io.reactivex.rxjava2:rxjava:2.2.3@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-media-compat-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:print-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.squareup.okhttp3:okhttp:3.10.0@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-fragment-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.github.bumptech.glide:disklrucache:4.8.0@jar.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:common:1.1.1@jar.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:livedata-core-1.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-compat-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:animated-vector-drawable-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:appcompat-v7-28.0.0.classpath"/>
+  </path>
+  
+  <path id="mvvmhabit.runtime.module.classpath">
+    <pathelement location="${mvvmhabit.testoutput.dir}"/>
+    <pathelement location="${mvvmhabit.output.dir}"/>
+    <path refid="library.gradle:_com.android.support:localbroadcastmanager-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.github.tbruyelle:rxpermissions-0.10.2.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-vector-drawable-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:interpolator-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-core-utils-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.squareup.retrofit2:retrofit:2.4.0@jar.classpath"/>
+    <path refid="library.gradle:_com.trello.rxlifecycle2:rxlifecycle:2.2.2@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:drawerlayout-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:coordinatorlayout-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:swiperefreshlayout-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.github.bumptech.glide:annotations:4.8.0@jar.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:livedata-1.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.databinding:adapters-3.3.2.classpath"/>
+    <path refid="library.gradle:_com.squareup.okio:okio:1.14.0@jar.classpath"/>
+    <path refid="library.gradle:_com.trello.rxlifecycle2:rxlifecycle-components-2.2.2.classpath"/>
+    <path refid="library.gradle:_com.android.support:versionedparcelable-28.0.0.classpath"/>
+    <path refid="library.gradle:_io.reactivex.rxjava2:rxandroid-2.1.0.classpath"/>
+    <path refid="library.gradle:_com.afollestad.material-dialogs:core-0.9.4.5.classpath"/>
+    <path refid="library.gradle:_android.arch.core:runtime-1.1.1.classpath"/>
+    <path refid="library.gradle:_com.trello.rxlifecycle2:rxlifecycle-android-2.2.2.classpath"/>
+    <path refid="library.gradle:_com.android.support:loader-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.databinding:baselibrary:3.3.2@jar.classpath"/>
+    <path refid="library.gradle:_me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-2.2.0.classpath"/>
+    <path refid="library.gradle:_com.squareup.retrofit2:adapter-rxjava2:2.4.0@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-v4-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.squareup.retrofit2:converter-gson:2.4.0@jar.classpath"/>
+    <path refid="library.gradle:_com.github.bumptech.glide:gifdecoder-4.8.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:viewpager-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.databinding:library-3.3.2.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-annotations:28.0.0@jar.classpath"/>
+    <path refid="library.gradle:_com.jakewharton.rxbinding2:rxbinding-2.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:runtime-1.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:customview-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.gyf.immersionbar:immersionbar-2.3.3.classpath"/>
+    <path refid="library.gradle:_com.google.code.gson:gson:2.8.5@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-core-ui-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:slidingpanelayout-28.0.0.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:viewmodel-1.1.1.classpath"/>
+    <path refid="library.gradle:_org.reactivestreams:reactive-streams:1.0.2@jar.classpath"/>
+    <path refid="library.gradle:_com.github.bumptech.glide:glide-4.8.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:collections:28.0.0@jar.classpath"/>
+    <path refid="library.gradle:_me.zhanghai.android.materialprogressbar:library-1.4.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:documentfile-28.0.0.classpath"/>
+    <path refid="library.gradle:_me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview-2.2.0.classpath"/>
+    <path refid="library.gradle:_com.afollestad.material-dialogs:commons-0.9.4.5.classpath"/>
+    <path refid="library.gradle:_com.android.support:recyclerview-v7-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:cursoradapter-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:asynclayoutinflater-28.0.0.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:extensions-1.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.core:common:1.1.1@jar.classpath"/>
+    <path refid="library.gradle:_io.reactivex.rxjava2:rxjava:2.2.3@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-media-compat-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:print-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.squareup.okhttp3:okhttp:3.10.0@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-fragment-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.github.bumptech.glide:disklrucache:4.8.0@jar.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:common:1.1.1@jar.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:livedata-core-1.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-compat-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:animated-vector-drawable-28.0.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:appcompat-v7-28.0.0.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.mvvmhabit">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.mvvmhabit">
+    <patternset refid="excluded.from.module.mvvmhabit"/>
+  </patternset>
+  
+  <path id="mvvmhabit.module.sourcepath">
+    <dirset dir="${module.mvvmhabit.basedir}">
+      <include name="build/generated/source/apt/debug"/>
+      <include name="build/generated/source/buildConfig/debug"/>
+      <include name="build/generated/renderscript_source_output_dir/debug/compileDebugRenderscript/out"/>
+      <include name="build/generated/data_binding_base_class_source_out/debug/dataBindingGenBaseClassesDebug/out"/>
+      <include name="build/generated/res/rs/debug"/>
+      <include name="build/generated/res/resValues/debug"/>
+      <include name="src/main/res"/>
+      <include name="src/main/java"/>
+    </dirset>
+  </path>
+  
+  <path id="mvvmhabit.module.test.sourcepath">
+    <dirset dir="${module.mvvmhabit.basedir}">
+      <include name="src/androidTest/java"/>
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.mvvmhabit" depends="compile.module.mvvmhabit.production,compile.module.mvvmhabit.tests" description="Compile module mvvmhabit"/>
+  
+  <target name="compile.module.mvvmhabit.production" depends="register.custom.compilers" description="Compile module mvvmhabit; production classes">
+    <mkdir dir="${mvvmhabit.output.dir}"/>
+    <javac2 destdir="${mvvmhabit.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.mvvmhabit}/javac">
+      <compilerarg line="${compiler.args.mvvmhabit}"/>
+      <bootclasspath refid="mvvmhabit.module.bootclasspath"/>
+      <classpath refid="mvvmhabit.module.production.classpath"/>
+      <src refid="mvvmhabit.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.mvvmhabit"/>
+    </javac2>
+    
+    <copy todir="${mvvmhabit.output.dir}">
+      <fileset dir="${module.mvvmhabit.basedir}/build/generated/source/apt/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.mvvmhabit.basedir}/build/generated/source/buildConfig/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.mvvmhabit.basedir}/build/generated/renderscript_source_output_dir/debug/compileDebugRenderscript/out">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.mvvmhabit.basedir}/build/generated/data_binding_base_class_source_out/debug/dataBindingGenBaseClassesDebug/out">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.mvvmhabit.basedir}/build/generated/res/rs/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.mvvmhabit.basedir}/build/generated/res/resValues/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.mvvmhabit.basedir}/src/main/res">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.mvvmhabit.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.mvvmhabit.tests" depends="register.custom.compilers,compile.module.mvvmhabit.production" description="compile module mvvmhabit; test classes" unless="skip.tests">
+    <mkdir dir="${mvvmhabit.testoutput.dir}"/>
+    <javac2 destdir="${mvvmhabit.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.mvvmhabit}/javac">
+      <compilerarg line="${compiler.args.mvvmhabit}"/>
+      <bootclasspath refid="mvvmhabit.module.bootclasspath"/>
+      <classpath refid="mvvmhabit.module.classpath"/>
+      <src refid="mvvmhabit.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.mvvmhabit"/>
+    </javac2>
+    
+    <copy todir="${mvvmhabit.testoutput.dir}">
+      <fileset dir="${module.mvvmhabit.basedir}/src/androidTest/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.mvvmhabit.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.mvvmhabit" description="cleanup module">
+    <delete dir="${mvvmhabit.output.dir}"/>
+    <delete dir="${mvvmhabit.testoutput.dir}"/>
+  </target>
+</project>

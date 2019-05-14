@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.pc.mimi.ui.selectsex.SelectSexViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.pc.mimi.ui.selectsex.SelectSexActivity">
+
+        <include layout="@layout/include_layout_toolbar" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="70dp"
+            android:text="你是..."
+            android:textColor="@color/text_333333"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+        <!--选择-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="86dp"
+            android:layout_marginRight="@dimen/dp_12"
+            android:gravity="center_horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="202dp"
+                app:onClickCommand="@{viewModel.selectBoy}"
+                android:layout_weight="1"
+                android:background="@drawable/shape_radius_def4fe_5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="45dp"
+                    android:background="@drawable/ic_sex_b" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="43dp"
+                    android:text="男士"
+                    android:textColor="@color/text_5AC8FA" />
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:visibility="@{viewModel.isBoySelect}"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/ic_select" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="22dp"
+                android:layout_height="0dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="202dp"
+                app:onClickCommand="@{viewModel.selectGirl}"
+                android:layout_weight="1"
+                android:background="@drawable/shape_radius_ffe3e8_5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="45dp"
+                    android:background="@drawable/ic_sex_g" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="43dp"
+                    android:text="女士"
+                    android:textColor="@color/text_5AC8FA" />
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:visibility="@{viewModel.isGirlSelect}"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/ic_select" />
+            </LinearLayout>
+        </LinearLayout>
+        <!--按钮-->
+        <TextView
+            onClickCommand="@{viewModel.confir}"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="72dp"
+            android:layout_marginRight="@dimen/dp_12"
+            android:background="@drawable/selector_btn_radius_22"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:text="选择性别后无法修改"
+            android:textColor="@color/text_999999"
+            android:textSize="12sp" />
+    </LinearLayout>
+</layout>

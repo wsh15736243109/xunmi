@@ -1,0 +1,150 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--将ActionBar隐藏,这里使用ToolBar-->
+        <item name="windowActionBar">false</item>
+        <!-- 使用 API Level 22以上编译的话，要拿掉前綴字 -->
+        <item name="windowNoTitle">true</item>
+        <!--colorPrimary 对应ToolBar的颜色-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--colorPrimaryDark对应状态栏的颜色-->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--colorAccent 对应EditText编辑时、RadioButton选中、CheckBox等选中时的颜色。-->
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+        <item name="android:windowBackground">@color/white</item>
+        <!-- 解决activity切换时的黑屏问题 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/animation_activity</item>
+        <item name="android:indeterminateDrawable">@drawable/progress_round</item>
+    </style>
+
+    <style name="animation_activity">
+        <item name="android:activityOpenEnterAnimation">@anim/translate_right_to_center</item>
+        <item name="android:activityOpenExitAnimation">@anim/translate_center_to_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/translate_left_to_center</item>
+        <item name="android:activityCloseExitAnimation">@anim/translate_center_to_right</item>
+    </style>
+
+    <!--启动页主题-->
+    <style name="ThemeSplash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/layer_list_splash</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <!--自定义dialog样式-->
+    <style name="CustomDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- 是否有边框 -->
+        <!--<item name="android:windowFrame">@null</item>-->
+        <!--<item name="android:backgroundDimEnabled">false</item>&lt;!&ndash;activity不变暗&ndash;&gt;-->
+        <!--是否在悬浮Activity之上  -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 标题 -->
+        <!--<item name="android:windowNoTitle">true</item>-->
+
+        <item name="android:windowContentOverlay">@null</item>
+        <!--阴影  -->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <!--背景透明-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 还可以加入一些弹出和退出的动画 (lan)-->
+        <!--<item name="android:backgroundDimEnabled">true</item>&lt;!&ndash; 模糊 &ndash;&gt;-->
+    </style>
+    <style name="FullScreenWaitDialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowIsFloating">true</item><!-- 是否悬浮在activity上 -->
+        <item name="android:backgroundDimEnabled">false</item><!-- 是否模糊 -->
+        <item name="android:windowBackground">@android:color/transparent</item><!--背景透明-->
+
+    </style>
+    <style name="CustomDialogAnima">
+        <item name="android:windowEnterAnimation">@anim/anim_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_bottom_out</item>
+    </style>
+
+    <style name="CustomDialogAnima_top">
+        <item name="android:windowEnterAnimation">@anim/anim_top_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_top_out</item>
+    </style>
+    <!--PopupWindow的动画显示效果是通过setAnimationStyle(int id)方法设置的，其中id为一个style的id，所以我们要在styles.xml文件中设置一个动画样式：-->
+    <style name="popwin_anim_style_top_in">
+        <item name="android:windowEnterAnimation">@anim/anim_top_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_top_out</item>
+    </style>
+    <style name="popwin_anim_style_right_in">
+        <item name="android:windowEnterAnimation">@anim/anim_right_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_right_out</item>
+    </style>
+    <style name="DarkAnimation">
+        <item name="android:windowEnterAnimation">@anim/dark_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/dark_fade_out</item>
+    </style>
+    <style name="comment_dialog" parent="android:Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <!-- 显示对话框时当前的屏幕是否变暗 -->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <!--默认样式 注意* 样式只可修改，不能删除任何一项 否则报错-->
+    <style name="pic_select_style" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <!--标题栏背景色-->
+        <item name="colorPrimary">@color/act_bg</item>
+        <!--状态栏背景色-->
+        <item name="colorPrimaryDark">@color/act_bg</item>
+        <!--是否改变图片列表界面状态栏字体颜色为黑色-->
+        <item name="picture.statusFontColor">false</item>
+        <!--返回键图标-->
+        <item name="picture.leftBack.icon">@drawable/ic_back</item>
+        <!--标题下拉箭头-->
+        <item name="picture.arrow_down.icon">@drawable/arrow_down</item>
+        <!--标题上拉箭头-->
+        <item name="picture.arrow_up.icon">@drawable/arrow_up</item>
+        <!--标题文字颜色-->
+        <item name="picture.title.textColor">@color/colorAccent</item>
+        <!--标题栏右边文字-->
+        <item name="picture.right.textColor">@color/colorAccent</item>
+        <!--图片列表勾选样式-->
+        <item name="picture.checked.style">@drawable/checkbox_bg_selector</item>
+        <!--开启图片列表勾选数字模式-->
+        <item name="picture.style.checkNumMode">false</item>
+        <!--选择图片样式0/9-->
+        <item name="picture.style.numComplete">false</item>
+        <!--图片列表底部背景色-->
+        <item name="picture.bottom.bg">@color/color_fa</item>
+        <!--图片列表预览文字颜色-->
+        <item name="picture.preview.textColor">@color/colorPrimary</item>
+        <!--图片列表已完成文字颜色-->
+        <item name="picture.complete.textColor">@color/colorPrimary</item>
+        <!--图片已选数量圆点背景色-->
+        <item name="picture.num.style">@drawable/shape_circle_10</item>
+        <!--预览界面标题文字颜色-->
+        <item name="picture.ac_preview.title.textColor">@color/colorAccent</item>
+        <!--预览界面已完成文字颜色-->
+        <item name="picture.ac_preview.complete.textColor">@color/colorAccent</item>
+        <!--预览界面标题栏背景色-->
+        <item name="picture.ac_preview.title.bg">@color/bar_grey</item>
+        <!--预览界面底部背景色-->
+        <item name="picture.ac_preview.bottom.bg">@color/bar_grey_90</item>
+        <!--预览界面返回箭头-->
+        <item name="picture.preview.leftBack.icon">@drawable/ic_back</item>
+        <!--是否改变预览界面状态栏字体颜色为黑色-->
+        <!--<item name="picture.preview.statusFontColor">false</item>-->
+        <!--裁剪页面标题背景色-->
+        <item name="picture.crop.toolbar.bg">@color/act_bg</item>
+        <!--裁剪页面状态栏颜色-->
+        <item name="picture.crop.status.color">@color/act_bg</item>
+        <!--裁剪页面标题文字颜色-->
+        <item name="picture.crop.title.color">@color/colorAccent</item>
+        <!--相册文件夹列表选中图标-->
+        <item name="picture.folder_checked_dot">@drawable/shape_circle_10</item>
+    </style>
+</resources>

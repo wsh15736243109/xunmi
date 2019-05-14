@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#F5922F</color>
+    <color name="transparent">#00000000</color>
+
+
+    <color name="text_323333">#323333</color>
+    <color name="text_333333">#333333</color>
+    <color name="text_222222">#222222</color>
+    <color name="text_E1E1E1">#E1E1E1</color>
+    <color name="text_999999">#999999</color>
+    <color name="text_F5922F">#F5922F</color>
+    <color name="text_F5922F_D">#C76B13</color>
+    <color name="text_5AC8FA">#5AC8FA</color>
+    <color name="text_FF5273">#FF5273</color>
+    <color name="text_7473AC">#7473AC</color>
+    <color name="text_7372AB">#7372AB</color>
+    <color name="text_FFBE7E">#FFBE7E</color>
+    <color name="act_bg">#EDEFF0</color>
+    <color name="default_clickable_color">#cccccc</color>
+    <color name="color_8290AF">#8290AF</color>
+    <color name="praise_item_selector_default">#cccccc</color>
+    <color name="praise_item_default">#333333</color>
+    <color name="praise_item">#8290AF</color>
+    <color name="color_red_l">#C2466D</color>
+
+
+    <color name="im_font_color_text_hint">#abb1b6</color>
+    <color name="color_232323">#232323</color>
+    <color name="name_selector_color">#cccccc</color>
+</resources>

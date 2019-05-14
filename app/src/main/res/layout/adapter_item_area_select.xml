@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <!--android:background="@drawable/view_bg_white_coloraccent_selector"-->
+
+    <TextView
+        android:id="@+id/area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="46dp"
+        android:text="杭州"
+        android:textColor="@drawable/selector_text_color_333333_f5922f"
+        android:textSize="14sp" />
+
+    <include layout="@layout/include_line_hr_match" />
+</LinearLayout>

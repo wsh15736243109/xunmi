@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="titleBar"
+            type="com.pc.mimi.ui.home.HomeViewModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/toolbar"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            onClickCommand="@{titleBar.search}"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/view_bg_transparent_grey_selector"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/ic_search" />
+        </LinearLayout>
+
+        <LinearLayout
+            onClickCommand="@{titleBar.condition}"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp_12"
+            android:paddingRight="@dimen/dp_12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="附近"
+                android:textColor="@color/text_323333"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="6dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/ic_down" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/view_bg_transparent_grey_selector"
+            android:gravity="center_vertical"
+            app:onClickCommand="@{titleBar.sexType}">
+
+            <TextView
+                android:layout_width="9dp"
+                android:layout_height="18dp"
+                app:isSelected="@{titleBar.isGirl}"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/selector_boy_girl_change_boy" />
+
+            <TextView
+                android:layout_width="9dp"
+                android:layout_height="18dp"
+                app:isSelected="@{titleBar.isBoy}"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/selector_boy_girl_change_girl" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.pc.mimi.ui.bindphone.BindPhoneViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/act_bg"
+        android:orientation="vertical"
+        tools:context="com.pc.mimi.ui.bindphone.BindPhoneActivity">
+
+        <include layout="@layout/include_layout_toolbar" />
+
+        <include layout="@layout/include_line_hr_match" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="绑定手机号，让你的账号更安全"
+            android:textColor="@color/text_999999"
+            android:textSize="11sp" />
+        <!--+86-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@drawable/view_bg_white_grey_selector"
+            android:gravity="center_vertical"
+            android:minHeight="46dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_weight="1"
+                android:text="+86"
+                android:textColor="@color/text_333333"
+                android:textSize="14sp" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_weight="4"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="请输入手机号"
+                android:text="@={viewModel.userPhone}"
+                android:textColor="@color/text_333333"
+                android:textColorHint="@color/text_999999"
+                android:textCursorDrawable="@null"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <include layout="@layout/include_line_hr_match" />
+        <!--验证码-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/view_bg_white_grey_selector"
+            android:gravity="center_vertical"
+            android:minHeight="46dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_weight="1"
+                android:text="验证码"
+                android:textColor="@color/text_333333"
+                android:textSize="14sp" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_weight="2"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="请输入收到的验证码"
+                android:maxLength="6"
+                android:textColor="@color/text_333333"
+                android:textColorHint="@color/text_999999"
+                android:textCursorDrawable="@null"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/view_bg_transparent_grey_selector"
+                android:gravity="center"
+                android:text="@={viewModel.sendCodeText}"
+                android:textColor="@color/text_F5922F"
+                android:textSize="14sp"
+                app:onClickCommand="@{viewModel.sendCode}" />
+        </LinearLayout>
+
+        <include layout="@layout/include_line_hr_match" />
+        <!--设置密码-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/view_bg_white_grey_selector"
+            android:gravity="center_vertical"
+            android:minHeight="46dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_weight="1"
+                android:text="设置密码"
+                android:textColor="@color/text_333333"
+                android:textSize="14sp" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_weight="4"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="密码不少于6位"
+                android:inputType="textPassword"
+                android:text="@={viewModel.password}"
+                android:textColor="@color/text_333333"
+                android:textColorHint="@color/text_999999"
+                android:textCursorDrawable="@null"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <TextView
+            app:onClickCommand="@{viewModel.confir}"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="@dimen/dp_12"
+            android:background="@drawable/selector_btn_radius_22"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</layout>

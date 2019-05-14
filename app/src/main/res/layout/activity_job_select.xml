@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.pc.mimi.ui.edituserinfo.JobSelectViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.pc.mimi.ui.edituserinfo.MettingAreaSelectActivity">
+
+        <include layout="@layout/include_layout_toolbar" />
+
+        <include layout="@layout/include_line_hr_match" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_one"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/act_bg"
+                android:overScrollMode="never" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_two"
+                android:layout_width="0dp"
+                android:layout_marginLeft="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/act_bg"
+                android:overScrollMode="never" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_three"
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/act_bg"
+                android:overScrollMode="never" />
+        </LinearLayout>
+
+        <include layout="@layout/include_line_hr_match" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:minHeight="46dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:background="@drawable/shape_strok_radius_3"
+                android:gravity="center_vertical"
+                android:paddingLeft="7dp"
+                android:paddingTop="5dp"
+                android:paddingRight="7dp"
+                android:paddingBottom="5dp"
+                android:text="@={viewModel.jobText}"
+                android:textColor="@color/text_F5922F"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/view_bg_transparent_grey_selector"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_12"
+                android:paddingRight="@dimen/dp_12"
+                android:text="确定"
+                android:textColor="@color/text_F5922F"
+                android:textSize="14sp"
+                app:onClickCommand="@{viewModel.confir}" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

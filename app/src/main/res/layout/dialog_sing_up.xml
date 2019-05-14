@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_solid_strok_radius_3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:text="报名"
+            android:textColor="@color/text_333333"
+            android:textSize="14sp" />
+
+        <com.pc.mimi.widget.SquareImageView
+            android:id="@+id/img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/laylerst_add"
+            android:padding="2dp"
+            android:scaleType="centerCrop"
+            app:riv_border_color="@color/text_E1E1E1"
+            app:riv_border_width="1dp"
+            app:riv_corner_radius="5dp"
+            app:riv_oval="false" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="@dimen/dp_12"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/cancel"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_stork_radius_22"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/text_F5922F"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/sign_up"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_radius_22"
+                android:gravity="center"
+                android:text="报名"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

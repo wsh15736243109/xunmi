@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:minHeight="245dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:minHeight="46dp">
+
+            <TextView
+                android:id="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/view_bg_transparent_grey_selector"
+                android:padding="5dp"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:text="取消"
+                android:textColor="@color/text_F5922F"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/text_middle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:text="年龄"
+                android:textColor="@color/text_333333"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/confir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/view_bg_transparent_grey_selector"
+                android:padding="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_12"
+                android:text="确定"
+                android:textColor="@color/text_F5922F"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:overScrollMode="never"
+            android:layout_height="200dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:minHeight="46dp">
+
+            <com.pc.mimi.widget.LabelsView
+                android:id="@+id/flow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                app:labelBackground="@drawable/shape_strok_radius_3"
+                app:labelTextPaddingBottom="6dp"
+                app:labelTextPaddingLeft="12dp"
+                app:labelTextPaddingRight="12dp"
+                app:labelTextPaddingTop="6dp"
+                app:labelTextSize="14sp"
+                app:lineMargin="8dp"
+                app:selectType="NONE"
+                app:wordMargin="8dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

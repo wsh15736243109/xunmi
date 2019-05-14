@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.pc.mimi.ui.publishmeeting.PublishMeetingViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.pc.mimi.ui.publishmeeting.PublishMeetingActivity">
+
+        <include layout="@layout/include_layout_toolbar" />
+
+        <include layout="@layout/include_line_hr_match" />
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/act_bg"
+            app:srlEnablePureScrollMode="true">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!--content-->
+                    <!--约会期望-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:minHeight="46dp"
+                        android:orientation="horizontal"
+                        app:onClickCommand="@{viewModel.mettingWishSelect}">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:text="约会期望"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+
+                        <com.pc.mimi.widget.LabelsView
+                            android:id="@+id/flow"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:layout_marginRight="@dimen/dp_12"
+                            android:layout_weight="2"
+                            app:labelBackground="@drawable/shape_strok_radius_3"
+                            app:labelTextPaddingBottom="6dp"
+                            app:labelTextPaddingLeft="12dp"
+                            app:labelTextPaddingRight="12dp"
+                            app:labelTextPaddingTop="6dp"
+                            app:labelTextSize="14sp"
+                            app:lineMargin="8dp"
+                            app:selectType="NONE"
+                            app:setLabels="@{viewModel.meetingWishData}"
+                            app:wordMargin="8dp" />
+                    </LinearLayout>
+
+                    <include layout="@layout/include_line_hr_match" />
+                    <!--约会城市-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:minHeight="46dp"
+                        android:orientation="horizontal"
+                        app:onClickCommand="@{viewModel.mettingCity}">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:text="约会城市"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:padding="12dp"
+                            android:text="@={viewModel.meetingCityText}"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <include layout="@layout/include_line_hr_match" />
+                    <!--约会时间-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:minHeight="46dp"
+                        android:orientation="horizontal"
+                        app:onClickCommand="@{viewModel.mettingDate}">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:text="选择日期"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:padding="12dp"
+                            android:text="@={viewModel.meetingDateText}"
+                            android:textColor="@color/text_999999"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <include layout="@layout/include_line_hr_match" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:minHeight="46dp"
+                        android:orientation="horizontal"
+                        app:onClickCommand="@{viewModel.mettingTime}">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:text="约会时间"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp"
+                            android:visibility="invisible" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:padding="12dp"
+                            android:text="@={viewModel.meetingTimeText}"
+                            android:textColor="@color/text_999999"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <include layout="@layout/include_line_hr_match" />
+                    <!--补充说明-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="top"
+                        android:minHeight="138dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:text="补充说明"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:background="@null"
+                            android:gravity="top"
+                            android:hint="谈吐文明的人更受欢迎，请勿发布低俗、色情交易、或曝光他人隐私的内容（选填）"
+                            android:padding="12dp"
+                            android:text="@={viewModel.otherSome}"
+                            android:textColor="@color/text_333333"
+                            android:textColorHint="@color/text_999999"
+                            android:textCursorDrawable="@null"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <include layout="@layout/include_line_hr_match" />
+                    <!--配图-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="top"
+                        android:minHeight="138dp"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/dp_12"
+                        android:paddingBottom="@dimen/dp_12">
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:text="配图\n(可不传)"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:layout_marginRight="@dimen/dp_12"
+                            android:gravity="center_vertical" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_12"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:text="*请勿上传低俗的照片、严重者将作封号处理"
+                        android:textColor="@color/text_999999"
+                        android:textSize="11sp" />
+
+                    <!--对通性别用户隐藏-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:minHeight="46dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:layout_weight="1"
+                            android:text="对通性别用户隐藏"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+
+                        <Switch
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:padding="12dp"
+                            android:textColor="@color/text_999999"
+                            android:textSize="14sp"
+                            app:onSwitchChanged="@{viewModel.isMissSelf}" />
+                    </LinearLayout>
+
+                    <include layout="@layout/include_line_hr_match" />
+                    <!--禁止评论-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:minHeight="46dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:layout_weight="1"
+                            android:text="禁止评论"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+
+                        <Switch
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:padding="12dp"
+                            android:textColor="@color/text_999999"
+                            android:textSize="14sp"
+                            app:onSwitchChanged="@{viewModel.isCanDisscuss}" />
+                    </LinearLayout>
+
+                    <include layout="@layout/include_line_hr_match" />
+                    <!--发布-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginLeft="@dimen/dp_12"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="@dimen/dp_12"
+                        android:background="@drawable/selector_btn_radius_22"
+                        android:gravity="center"
+                        android:text="发布"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:onClickCommand="@{viewModel.publish}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="@dimen/dp_12"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:layout_marginBottom="56dp"
+                        android:text="已认证的女士免费，否则需支付50.00觅币"
+                        android:textColor="@color/text_999999"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+            </android.support.v4.widget.NestedScrollView>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </LinearLayout>
+</layout>

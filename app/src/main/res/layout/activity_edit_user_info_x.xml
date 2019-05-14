@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.pc.mimi.ui.edituserinfo.EditUserInfoViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/act_bg"
+        android:orientation="vertical"
+        tools:context="com.pc.mimi.ui.edituserinfo.EditUserInfoActivity">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/include_layout_toolbar" />
+
+        <include layout="@layout/include_line_hr_match" />
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srlEnablePureScrollMode="true">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <com.pc.mimi.widget.CircleImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="24dp"
+                        android:src="@drawable/ic_select"
+                        app:onClickCommand="@{viewModel.updateProta}"
+                        app:url="@{viewModel.picProta}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:text="上传头像"
+                        android:textColor="@color/text_333333"
+                        android:textSize="14sp"
+                        app:onClickCommand="@{viewModel.updateProta}" />
+                    <!--昵称-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:background="@color/white"
+                        android:minHeight="46dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:layout_weight="1"
+                            android:text="昵称"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@null"
+                            android:gravity="center_vertical"
+                            android:hint="请输入"
+                            android:minHeight="45dp"
+                            android:text="@={viewModel.userName}"
+                            android:textColor="@color/text_333333"
+                            android:textColorHint="@color/text_999999"
+                            android:textCursorDrawable="@null"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <include layout="@layout/include_line_hr_match" />
+                    <!--约会范围-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:minHeight="46dp"
+                        android:orientation="horizontal"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="6dp"
+                        app:onClickCommand="@{viewModel.areaSelect}">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:layout_weight="1"
+                            android:text="约会范围"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+
+                        <com.pc.mimi.widget.LabelsView
+                            android:id="@+id/flow"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            app:labelBackground="@drawable/shape_strok_radius_3"
+                            app:labelTextPaddingBottom="6dp"
+                            app:labelTextPaddingLeft="12dp"
+                            app:labelTextPaddingRight="12dp"
+                            app:labelTextPaddingTop="6dp"
+                            app:labelTextSize="14sp"
+                            app:lineMargin="8dp"
+                            app:selectType="NONE"
+                            app:setLabels="@{viewModel.areaLabelsData}"
+                            app:wordMargin="8dp" />
+                    </LinearLayout>
+
+                    <include layout="@layout/include_line_hr_match" />
+                    <!--年龄-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:minHeight="46dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:layout_weight="1"
+                            android:text="年龄"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:gravity="center_vertical"
+                            android:minHeight="45dp"
+                            android:text="@={viewModel.ageText}"
+                            android:textColor="@color/text_999999"
+                            android:textCursorDrawable="@null"
+                            android:textSize="14sp"
+                            app:onClickCommand="@{viewModel.ageSelect}" />
+                    </LinearLayout>
+
+                    <include layout="@layout/include_line_hr_match" />
+                    <!--职业-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:minHeight="46dp"
+                        android:orientation="horizontal"
+                        app:onClickCommand="@{viewModel.jobSelect}">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:layout_weight="1"
+                            android:text="职业"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:gravity="center_vertical"
+                            android:minHeight="45dp"
+                            android:text="@={viewModel.jobText}"
+                            android:textColor="@color/text_999999"
+                            android:textCursorDrawable="@null"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <include layout="@layout/include_line_hr_match" />
+                    <!--约会节目-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:minHeight="46dp"
+                        android:orientation="horizontal"
+                        app:onClickCommand="@{viewModel.programSelect}">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:layout_weight="1"
+                            android:text="约会节目"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+
+                        <com.pc.mimi.widget.LabelsView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            app:labelBackground="@drawable/shape_strok_radius_3"
+                            app:labelTextPaddingBottom="6dp"
+                            app:labelTextPaddingLeft="12dp"
+                            app:labelTextPaddingRight="12dp"
+                            app:labelTextPaddingTop="6dp"
+                            app:labelTextSize="14sp"
+                            app:lineMargin="8dp"
+                            app:selectType="NONE"
+                            app:setLabels="@{viewModel.mettingProgram}"
+                            app:wordMargin="8dp" />
+                    </LinearLayout>
+
+                    <include layout="@layout/include_line_hr_match" />
+                    <!--约会期望-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:minHeight="46dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        app:onClickCommand="@{viewModel.wishSelect}">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:layout_weight="1"
+                            android:text="约会期望"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+
+                        <com.pc.mimi.widget.LabelsView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            app:labelBackground="@drawable/shape_strok_radius_3"
+                            app:labelTextPaddingBottom="6dp"
+                            app:labelTextPaddingLeft="12dp"
+                            app:labelTextPaddingRight="12dp"
+                            app:labelTextPaddingTop="6dp"
+                            app:labelTextSize="14sp"
+                            app:lineMargin="8dp"
+                            app:selectType="NONE"
+                            app:setLabels="@{viewModel.mettingWish}"
+                            app:wordMargin="8dp" />
+                    </LinearLayout>
+
+                    <include layout="@layout/include_line_hr_match" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="@dimen/dp_12"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:text="社交账号（至少选填一个）"
+                        android:textColor="@color/text_333333"
+                        android:textSize="14sp" />
+                    <!--QQ-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:background="@color/white"
+                        android:minHeight="46dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:layout_weight="1"
+                            android:text="QQ"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@null"
+                            android:gravity="center_vertical"
+                            android:hint="请填写"
+                            android:minHeight="45dp"
+                            android:text="@={viewModel.qqNum}"
+                            android:textColor="@color/text_333333"
+                            android:textColorHint="@color/text_999999"
+                            android:textCursorDrawable="@null"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <include layout="@layout/include_line_hr_match" />
+                    <!--微信-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:minHeight="46dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:layout_weight="1"
+                            android:text="微信"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@null"
+                            android:gravity="center_vertical"
+                            android:hint="请填写"
+                            android:minHeight="45dp"
+                            android:text="@={viewModel.vxNum}"
+                            android:textColor="@color/text_333333"
+                            android:textColorHint="@color/text_999999"
+                            android:textCursorDrawable="@null"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <include layout="@layout/include_line_hr_match" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="@dimen/dp_12"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:text="更多信息(选填)"
+                        android:textColor="@color/text_333333"
+                        android:textSize="14sp" />
+                    <!--身高-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:background="@color/white"
+                        android:minHeight="46dp"
+                        android:orientation="horizontal"
+                        app:onClickCommand="@{viewModel.heightSelect}">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:layout_weight="1"
+                            android:text="身高"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:gravity="center_vertical"
+                            android:minHeight="45dp"
+                            android:text="@={viewModel.bodyHight}"
+                            android:textColor="@color/text_999999"
+                            android:textCursorDrawable="@null"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <include layout="@layout/include_line_hr_match" />
+                    <!--体重-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:minHeight="46dp"
+                        android:orientation="horizontal"
+                        app:onClickCommand="@{viewModel.weightSelect}">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:layout_weight="1"
+                            android:text="体重"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:gravity="center_vertical"
+                            android:minHeight="45dp"
+                            android:text="@={viewModel.bodyWeight}"
+                            android:textColor="@color/text_999999"
+                            android:textCursorDrawable="@null"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <include layout="@layout/include_line_hr_match" />
+                    <!--胸围-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:visibility="@{viewModel.isShowBust}"
+                        android:minHeight="46dp"
+                        android:orientation="horizontal"
+                        app:onClickCommand="@{viewModel.bustSelect}">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:layout_weight="1"
+                            android:text="胸围"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:gravity="center_vertical"
+                            android:minHeight="45dp"
+                            android:text="@={viewModel.bodychest }"
+                            android:textColor="@color/text_999999"
+                            android:textCursorDrawable="@null"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <include layout="@layout/include_line_hr_match" />
+                    <!--个人介绍-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:minHeight="86dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:layout_weight="1"
+                            android:text="个人介绍"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="@null"
+                            android:gravity="center_vertical"
+                            android:hint="请填写"
+                            android:minHeight="45dp"
+                            android:text="@={viewModel.personIntrduce}"
+                            android:textColor="@color/text_333333"
+                            android:textColorHint="@color/text_999999"
+                            android:textCursorDrawable="@null"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginLeft="@dimen/dp_12"
+                        android:layout_marginTop="52dp"
+                        android:layout_marginRight="@dimen/dp_12"
+                        android:background="@drawable/selector_btn_radius_22"
+                        android:gravity="center"
+                        android:text="提交"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:onClickCommand="@{viewModel.submitX}" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="点击表示您阅读且同意"
+                            android:textColor="@color/text_999999"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="《用户手册》"
+                            android:textColor="@color/text_F5922F"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </LinearLayout>
+</layout>

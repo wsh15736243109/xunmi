@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.pc.mimi.ui.setting.SettingViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/act_bg"
+        android:orientation="vertical"
+        tools:context="com.pc.mimi.ui.setting.SettingActivity">
+
+        <include layout="@layout/include_layout_toolbar" />
+
+        <include layout="@layout/include_line_hr_match" />
+        <!--消息推送设置-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@drawable/view_bg_white_grey_selector"
+            android:gravity="center_vertical"
+            android:minHeight="46dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_weight="1"
+                android:text="消息推送设置"
+                android:textColor="@color/text_333333"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="@dimen/dp_12"
+                android:src="@drawable/ic_right" />
+        </LinearLayout>
+        <!--手机号码-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:onClickCommand="@{viewModel.bindPhone}"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@drawable/view_bg_white_grey_selector"
+            android:gravity="center_vertical"
+            android:minHeight="46dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_weight="1"
+                android:text="手机号码"
+                android:textColor="@color/text_333333"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="@dimen/dp_12"
+                android:src="@drawable/ic_right" />
+        </LinearLayout>
+
+        <include layout="@layout/include_line_hr_match" />
+        <!--修改密码-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/view_bg_white_grey_selector"
+            android:gravity="center_vertical"
+            android:minHeight="46dp"
+            app:onClickCommand="@{viewModel.modifyPassword}">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_weight="1"
+                android:text="修改密码"
+                android:textColor="@color/text_333333"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="@dimen/dp_12"
+                android:src="@drawable/ic_right" />
+        </LinearLayout>
+        <!--清除图片缓存-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@drawable/view_bg_white_grey_selector"
+            android:gravity="center_vertical"
+            android:minHeight="46dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_weight="1"
+                android:text="清除图片缓存"
+                android:textColor="@color/text_333333"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_12"
+                android:text="21M"
+                android:textColor="@color/text_999999"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="@dimen/dp_12"
+                android:src="@drawable/ic_right" />
+        </LinearLayout>
+        <!--知心摩天轮用户使用协议-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@drawable/view_bg_white_grey_selector"
+            android:gravity="center_vertical"
+            android:minHeight="46dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_weight="1"
+                android:text="知心摩天轮用户使用协议"
+                android:textColor="@color/text_333333"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="@dimen/dp_12"
+                android:src="@drawable/ic_right" />
+        </LinearLayout>
+        <!--当前版本-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@drawable/view_bg_white_grey_selector"
+            android:gravity="center_vertical"
+            android:minHeight="46dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_weight="1"
+                android:text="修改密码"
+                android:textColor="@color/text_333333"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_12"
+                android:text="1.0"
+                android:textColor="@color/text_999999"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <!--推出登陆-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            app:onClickCommand="@{viewModel.exit}"
+            android:background="@drawable/view_bg_white_grey_selector"
+            android:gravity="center"
+            android:minHeight="46dp"
+            android:text="退出登陆"
+            android:textColor="@color/text_F5922F"
+            android:textSize="14sp" />
+    </LinearLayout>
+</layout>

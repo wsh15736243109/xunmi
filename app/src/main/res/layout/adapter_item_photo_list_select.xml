@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+
+    <com.pc.mimi.widget.SquareImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:padding="2dp"
+        android:scaleType="centerCrop"
+        app:riv_border_color="@color/text_E1E1E1"
+        app:riv_border_width="1dp"
+        app:riv_corner_radius="5dp"
+        app:riv_oval="false" />
+
+    <LinearLayout
+        android:id="@+id/check"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="6dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/select"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/checkbox_bg_selector" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/see_delete"
+        android:layout_width="25dp"
+        android:visibility="gone"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="12dp"
+        android:layout_height="25dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/laylerst_see_delete" />
+    <TextView
+        android:id="@+id/red_pic"
+        android:layout_width="25dp"
+        android:visibility="gone"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="12dp"
+        android:layout_height="25dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/laylerst_red_pic" />
+</FrameLayout>

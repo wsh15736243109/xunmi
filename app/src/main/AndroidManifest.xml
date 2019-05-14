@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.xlyuns.xunmi">
+    <!-- Required -->
+    <!-- <permission -->
+    <!-- android:name="cn.tianyue0571.shengxian.permission.JPUSH_MESSAGE" -->
+    <!-- android:protectionLevel="signature" /> -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:name="com.pc.mimi.app.XunMiApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_logo"
+        android:label="@string/app_name"
+        android:maxAspectRatio="2.4"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="com.pc.mimi.ui.userdetail.SeePhotoActivity"></activity>
+        <activity android:name="com.pc.mimi.ui.mine.PhotoPreviewActivity" />
+        <activity android:name="com.pc.mimi.ui.mine.PhotoBookActivity" />
+        <activity android:name="com.pc.mimi.ui.mine.WebActivity" />
+        <activity android:name="com.pc.mimi.ui.chat.ChatActivity" />
+        <activity android:name="com.pc.mimi.ui.mine.SignUpAcountActivity" />
+        <activity android:name="com.pc.mimi.ui.metting.MyMeetingActivity" />
+        <activity android:name="com.pc.mimi.ui.vipmembercenter.LadysAuthActivity" />
+        <activity android:name="com.pc.mimi.ui.edituserinfo.MettingAreaSelectActivity" />
+        <activity android:name="com.pc.mimi.ui.forgetpassword.ForgetPasswordActivity" />
+        <activity android:name="com.pc.mimi.ui.bindphone.BindPhoneActivity" />
+        <activity android:name="com.pc.mimi.ui.modifypassword.ModifyPasswordActivity" />
+        <activity android:name="com.pc.mimi.ui.messagepushsetting.MessagePushSettingActivity" />
+        <activity android:name="com.pc.mimi.ui.setting.SettingActivity" />
+        <activity
+            android:name="com.pc.mimi.ui.splash.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ThemeSplash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.pc.mimi.ui.blacklist.BlackListActivity" />
+        <activity android:name="com.pc.mimi.ui.setting.SecretSettingActivity" />
+        <activity android:name="com.pc.mimi.ui.myfavourite.MyFavourIteActivity" />
+        <activity android:name="com.pc.mimi.ui.publishmeeting.PublishMeetingActivity" />
+        <activity android:name="com.pc.mimi.ui.list.IncomeRichListActivity" />
+        <activity android:name="com.pc.mimi.ui.userdetail.UserDetailActivity" />
+        <activity android:name="com.pc.mimi.ui.edituserinfo.EditUserInfoActivity" />
+        <activity android:name="com.pc.mimi.ui.vipmembercenter.VipMemberCenterActivity" />
+        <activity android:name="com.pc.mimi.ui.wallet.WalletActivity" /> <!-- 屏幕适配 -->
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="375" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="667" /> <!-- 适配华为（huawei）刘海屏 -->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" /> <!-- 适配小米（xiaomi）刘海屏 -->
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" /> <!-- 屏幕适配 -->
+        <activity android:name="com.pc.mimi.ui.main.MainActivity" />
+        <activity android:name="com.pc.mimi.ui.login.LoginActivity" />
+        <activity android:name="com.pc.mimi.ui.register.RegisterActivity" />
+        <activity android:name="com.pc.mimi.ui.selectsex.SelectSexActivity" />
+        <activity android:name="com.pc.mimi.ui.edituserinfo.JobSelectActivity" />
+        <activity android:name="com.pc.mimi.ui.edituserinfo.EditUserInfoXActivity" />
+        <activity
+            android:name="com.pc.mimi.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+    </application>
+
+</manifest>

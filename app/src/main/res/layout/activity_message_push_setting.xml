@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.pc.mimi.ui.messagepushsetting.MessagePushSettingViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/act_bg"
+        android:orientation="vertical"
+        tools:context="com.pc.mimi.ui.messagepushsetting.MessagePushSettingActivity">
+
+        <include layout="@layout/include_layout_toolbar" />
+
+        <include layout="@layout/include_line_hr_match" />
+        <!--私聊消息-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@drawable/view_bg_white_grey_selector"
+            android:gravity="center_vertical"
+            android:minHeight="46dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_weight="1"
+                android:text="私聊消息"
+                android:textColor="@color/text_333333"
+                android:textSize="14sp" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_12" />
+        </LinearLayout>
+
+        <include layout="@layout/include_line_hr_match" />
+        <!--有新的约会-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/view_bg_white_grey_selector"
+            android:gravity="center_vertical"
+            android:minHeight="46dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_weight="1"
+                android:text="有新的约会"
+                android:textColor="@color/text_333333"
+                android:textSize="14sp" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_12" />
+        </LinearLayout>
+
+        <include layout="@layout/include_line_hr_match" />
+        <!--喜欢的人开麦通知-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/view_bg_white_grey_selector"
+            android:gravity="center_vertical"
+            android:minHeight="46dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_weight="1"
+                android:text="喜欢的人开麦通知"
+                android:textColor="@color/text_333333"
+                android:textSize="14sp" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_12" />
+        </LinearLayout>
+
+        <include layout="@layout/include_line_hr_match" />
+        <!--有女士通过了我的查看请求-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/view_bg_white_grey_selector"
+            android:gravity="center_vertical"
+            android:minHeight="46dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_weight="1"
+                android:text="有女士通过了我的查看请求"
+                android:textColor="@color/text_333333"
+                android:textSize="14sp" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_12" />
+        </LinearLayout>
+
+        <include layout="@layout/include_line_hr_match" />
+        <!--邀请码申请成功-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/view_bg_white_grey_selector"
+            android:gravity="center_vertical"
+            android:minHeight="46dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_weight="1"
+                android:text="邀请码申请成功"
+                android:textColor="@color/text_333333"
+                android:textSize="14sp" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_12" />
+        </LinearLayout>
+
+        <include layout="@layout/include_line_hr_match" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="打开后将推送相应消息类型"
+            android:textColor="@color/text_999999"
+            android:textSize="11sp" />
+    </LinearLayout>
+</layout>

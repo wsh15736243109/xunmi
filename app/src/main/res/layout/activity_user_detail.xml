@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.pc.mimi.ui.userdetail.UserDetailViewModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/act_bg"
+        android:orientation="vertical"
+        tools:context="com.pc.mimi.ui.userdetail.UserDetailActivity">
+
+        <include
+            android:id="@+id/title_bar"
+            layout="@layout/include_layout_toolbar" />
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/title_bar"
+            app:srlEnablePureScrollMode="true">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="150dp"
+                                android:layout_marginTop="15dp">
+
+                                <com.pc.mimi.widget.CircleImageView
+                                    android:layout_width="140dp"
+                                    android:layout_height="140dp"
+                                    android:src="@drawable/shape_default_bitmap"
+                                    app:url="@{viewModel.personBean.avatar}" />
+
+                                <TextView
+                                    android:layout_width="60dp"
+                                    android:layout_height="25dp"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerInParent="true"
+                                    android:visibility="@{viewModel.isShowVip}"
+                                    app:setBackground="@{viewModel.imgVip}" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="@{viewModel.personBean.nick_name}"
+                                android:textColor="@color/text_333333"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="@dimen/dp_12"
+                            android:layout_marginRight="@dimen/dp_12"
+                            android:background="@drawable/shape_radius_strok_gray_3"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="8dp"
+                            app:isSelected="@{viewModel.isLike}"
+                            app:onClickCommand="@{viewModel.addMyLike}">
+
+                            <TextView
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:background="@drawable/selector_is_like" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:text="@={viewModel.clickToLike}"
+                                android:textColor="@drawable/selector_vip_tc_text"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="52dp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/shape_radius_eeeeee_10"
+                                android:gravity="center"
+                                android:minWidth="54dp"
+                                android:paddingLeft="10dp"
+                                android:text="30”"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/ic_play"
+                                android:gravity="center"
+                                android:minWidth="54dp"
+                                android:paddingLeft="10dp"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+                        </FrameLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:background="@drawable/checkbox_bg_selector"
+                                app:isSelected="@{viewModel.isAuthSelect}" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:text="@{viewModel.isAuth}"
+                                android:textColor="@color/text_999999"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginRight="@dimen/dp_12"
+                            android:layout_marginBottom="16dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:visibility="invisible">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="认证视频"
+                                android:textColor="@color/text_F5922F"
+                                android:textSize="11sp" />
+
+                            <TextView
+                                android:layout_width="7dp"
+                                android:layout_height="11dp"
+                                android:layout_marginLeft="5dp"
+                                android:background="@drawable/ic_right_y" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:visibility="@{viewModel.isShow}">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginRight="@dimen/dp_12"
+                            android:layout_marginBottom="16dp"
+                            android:background="@drawable/shape_radius_22"
+                            android:gravity="center"
+                            android:text="@={viewModel.isAuthText}"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <!--标签-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:background="@color/white"
+                        android:minHeight="46dp">
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="@{viewModel.isShowInfo}">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:minHeight="46dp"
+                            android:paddingLeft="@dimen/dp_12"
+                            android:text="相册"
+                            android:textColor="@color/text_333333"
+                            android:textSize="14sp" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <!--身高-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:minHeight="46dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_12"
+                                android:layout_weight="1"
+                                android:text="身高"
+                                android:textColor="@color/text_333333"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="center_vertical"
+                                android:minHeight="45dp"
+                                android:text="@{viewModel.personBean.height}"
+                                android:textColor="@color/text_999999"
+                                android:textCursorDrawable="@null"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <include layout="@layout/include_line_hr_match" />
+                        <!--体重-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:minHeight="46dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_12"
+                                android:layout_weight="1"
+                                android:text="体重"
+                                android:textColor="@color/text_333333"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="center_vertical"
+                                android:minHeight="45dp"
+                                android:text="@{viewModel.personBean.weight}"
+                                android:textColor="@color/text_999999"
+                                android:textCursorDrawable="@null"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <include layout="@layout/include_line_hr_match" />
+                        <!--胸围-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:minHeight="46dp"
+                            android:orientation="horizontal"
+                            android:visibility="@{viewModel.isBustShow}">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_12"
+                                android:layout_weight="1"
+                                android:text="胸围"
+                                android:textColor="@color/text_333333"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="center_vertical"
+                                android:minHeight="45dp"
+                                android:text="@{viewModel.personBean.bust}"
+                                android:textColor="@color/text_999999"
+                                android:textCursorDrawable="@null"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <include layout="@layout/include_line_hr_match" />
+                        <!--约会范围-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:minHeight="46dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_12"
+                                android:layout_weight="1"
+                                android:text="约会范围"
+                                android:textColor="@color/text_333333"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="center_vertical"
+                                android:minHeight="45dp"
+                                android:text="@{viewModel.personBean.dating_range}"
+                                android:textColor="@color/text_999999"
+                                android:textCursorDrawable="@null"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <include layout="@layout/include_line_hr_match" />
+                        <!--约会节目-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:minHeight="46dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_12"
+                                android:layout_weight="1"
+                                android:text="约会节目"
+                                android:textColor="@color/text_333333"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="center_vertical"
+                                android:minHeight="45dp"
+                                android:text="@{viewModel.personBean.dating_show}"
+                                android:textColor="@color/text_999999"
+                                android:textCursorDrawable="@null"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <include layout="@layout/include_line_hr_match" />
+                        <!--职业-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:minHeight="46dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_12"
+                                android:layout_weight="1"
+                                android:text="职业"
+                                android:textColor="@color/text_333333"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="center_vertical"
+                                android:minHeight="45dp"
+                                android:text="@{viewModel.personBean.job}"
+                                android:textColor="@color/text_999999"
+                                android:textCursorDrawable="@null"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <include layout="@layout/include_line_hr_match" />
+                        <!--社交账号-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:minHeight="46dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_12"
+                                android:layout_weight="1"
+                                android:text="社交账号"
+                                android:textColor="@color/text_333333"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="center_vertical"
+                                android:minHeight="45dp"
+                                android:text="已填写，点击查看"
+                                android:textColor="@color/text_FF5273"
+                                android:textCursorDrawable="@null"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <include layout="@layout/include_line_hr_match" />
+                        <!--约会期待-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:minHeight="46dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_12"
+                                android:layout_weight="1"
+                                android:text="约会期待"
+                                android:textColor="@color/text_333333"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="center_vertical"
+                                android:minHeight="45dp"
+                                android:text="@{viewModel.personBean.dating_expectations}"
+                                android:textColor="@color/text_999999"
+                                android:textCursorDrawable="@null"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <include layout="@layout/include_line_hr_match" />
+                        <!--个人介绍-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:minHeight="46dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_12"
+                                android:layout_weight="1"
+                                android:text="个人介绍"
+                                android:textColor="@color/text_333333"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="center_vertical"
+                                android:minHeight="45dp"
+                                android:text="@{viewModel.personBean.my_info}"
+                                android:textColor="@color/text_999999"
+                                android:textCursorDrawable="@null"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="65dp"
+                            android:text="请勿通过约会进行不法交易，如被举报核实将作封号处理"
+                            android:textColor="@color/text_999999"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="254dp"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:gravity="center"
+                        android:visibility="@{viewModel.isCanLook}"
+                        android:background="@color/white"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/ic_info_lock" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_12"
+                            android:text="她设置了限制，查看资料需要请求她的同意"
+                            android:textColor="@color/text_999999"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="7dp"
+                            android:layout_marginTop="@dimen/dp_12"
+                            app:onClickCommand="@{viewModel.requestLook}"
+                            android:paddingRight="10dp"
+                            android:background="@drawable/shape_radius_5"
+                            android:paddingBottom="7dp"
+                            android:text="申请查看"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+        <!--底部-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:minHeight="49dp"
+            android:visibility="@{viewModel.isShowInfo}">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/view_bg_transparent_grey_selector"
+                android:gravity="center"
+                app:onClickCommand="@{viewModel.asses}">
+
+                <TextView
+                    android:layout_width="12dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/ic_dis" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="9dp"
+                    android:text="评价"
+                    android:textColor="@color/text_333333"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/view_bg_transparent_grey_selector"
+                android:gravity="center"
+                app:onClickCommand="@{viewModel.toChat}">
+
+                <TextView
+                    android:layout_width="12dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/ic_mm" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="9dp"
+                    android:text="私聊"
+                    android:textColor="@color/text_333333"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/view_bg_transparent_grey_selector"
+                android:gravity="center"
+                android:visibility="gone"
+                app:onClickCommand="@{viewModel.account}">
+
+                <TextView
+                    android:layout_width="12dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/ic_account" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="9dp"
+                    android:text="社交账号"
+                    android:textColor="@color/text_333333"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

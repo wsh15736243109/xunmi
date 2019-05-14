@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="16dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:layout_marginLeft="@dimen/dp_12">
+
+            <com.pc.mimi.widget.CircleImageView
+                android:id="@+id/img"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:src="@drawable/shape_default_bitmap" />
+
+            <ImageView
+                android:id="@+id/is_vip"
+                android:layout_width="30dp"
+                android:layout_height="12dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_vip"
+                android:textColor="@color/white"
+                android:textSize="11sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/nick_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我我我"
+                    android:textColor="@color/text_333333"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/shape_radius_ff5273_20"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/img_sex"
+                        android:layout_width="9dp"
+                        android:layout_height="9dp"
+                        android:layout_marginLeft="12dp"
+                        android:src="@drawable/ic_girl_simbal" />
+
+                    <TextView
+                        android:id="@+id/age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="12dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:text="24"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/report"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="@dimen/dp_12"
+                    android:src="@drawable/ic_more" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/addtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginTop="14dp"
+                android:text="发布于2019-04-03  09:23"
+                android:textColor="@color/text_999999"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_marginLeft="12dp"
+            android:background="@drawable/shape_circle" />
+
+        <TextView
+            android:id="@+id/dating_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:text="旅游"
+            android:textColor="@color/text_333333"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="2dp"
+            android:layout_height="2dp"
+            android:layout_marginLeft="12dp"
+            android:background="@drawable/shape_circle" />
+
+        <TextView
+            android:id="@+id/start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:text="不限时间，杭州市"
+            android:textColor="@color/text_999999"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="2dp"
+            android:layout_height="2dp"
+            android:layout_marginLeft="12dp"
+            android:background="@drawable/shape_circle" />
+
+        <TextView
+            android:id="@+id/dating_hope"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:text="约会期望：我我我我"
+            android:textColor="@color/text_999999"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="2dp"
+            android:layout_height="2dp"
+            android:layout_marginLeft="12dp"
+            android:background="@drawable/shape_circle" />
+
+        <TextView
+            android:id="@+id/dating_remarks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:text="我我我我我我"
+            android:textColor="@color/text_999999"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <com.pc.mimi.widget.mettingview.MultiImageView
+        android:id="@+id/multiply_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_12" />
+    <!--评论-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="@dimen/dp_12"
+        android:layout_marginBottom="12dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/thumbs_up"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/view_bg_transparent_grey_selector"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_zan"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/selector_sumbs_up" />
+
+            <TextView
+                android:id="@+id/good_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="1"
+                android:textColor="@color/text_333333"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/comment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/view_bg_transparent_grey_selector"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_say" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="评论"
+                android:textColor="@color/text_333333"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sign_up"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/view_bg_transparent_grey_selector"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_hand_up" />
+
+            <TextView
+                android:id="@+id/sign_up_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="报名(0)"
+                android:textColor="@color/text_333333"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/include_line_hr_match" />
+
+    <LinearLayout
+        android:id="@+id/comment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:minHeight="40dp"
+        android:orientation="horizontal"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="13dp"
+            android:layout_marginTop="@dimen/dp_12"
+            android:src="@drawable/ic_say_icon" />
+
+        <com.pc.mimi.widget.mettingview.CommentListView
+            android:id="@+id/commentList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginBottom="@dimen/dp_12"
+            android:orientation="vertical"
+            app:item_color="@color/praise_item" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_12"
+        android:background="@color/act_bg" />
+</LinearLayout>
